@@ -67,7 +67,7 @@ class BraveScrollController: NSObject {
         panGesture.delegate = self
         return panGesture
     }()
-
+    
     fileprivate var scrollView: UIScrollView? { return browser?.webView?.scrollView }
     fileprivate var contentOffset: CGPoint { return scrollView?.contentOffset ?? CGPoint.zero }
     fileprivate var contentSize: CGSize { return scrollView?.contentSize ?? CGSize.zero }
@@ -170,20 +170,24 @@ class BraveScrollController: NSObject {
                 setBottomInset(h)
             }
             else {
-                guard let webView = getApp().browserViewController.webViewContainer else { return }
-                guard let toolBarFrame = footer?.frame else { return }
-                let frame = webView.frame
-                let bounds = UIScreen.main.bounds
-                
-                let toolBarPosition = bounds.height - min(toolBarFrame.minY, bounds.height)
-                
-                if frame.maxY > bounds.height - toolBarPosition {
-                    let inset = frame.maxY - bounds.height + toolBarPosition
-                    setBottomInset(inset)
+                if keyboardIsShowing {
+                    return
                 }
-                else {
-                    setBottomInset(0)
-                }
+                
+//                guard let webView = getApp().browserViewController.webViewContainer else { return }
+//                guard let toolBarFrame = footer?.frame else { return }
+//                let frame = webView.frame
+//                let bounds = UIScreen.main.bounds
+//
+//                let toolBarPosition = bounds.height - min(toolBarFrame.minY, bounds.height)
+//
+//                if frame.maxY > bounds.height - toolBarPosition {
+//                    let inset = frame.maxY - bounds.height + toolBarPosition
+//                    setBottomInset(inset)
+//                }
+//                else {
+//                    setBottomInset(0)
+//                }
             }
         }
     }
@@ -297,6 +301,8 @@ private extension BraveScrollController {
         if gesture.state == .ended || gesture.state == .cancelled {
             LastContentOffset.x = 0
             LastContentOffset.y = 0
+            
+            footerBottomOffset = 0
         }
         
         // avoid showing for slow scroll (up)
@@ -308,8 +314,12 @@ private extension BraveScrollController {
             scrollToolbarsWithDelta(delta.y)
         }
     }
-
+    
     func scrollToolbarsWithDelta(_ delta: CGFloat) {
+        if keyboardIsShowing {
+            return
+        }
+        
         if scrollViewHeight >= contentSize.height {
             return
         }
@@ -317,12 +327,14 @@ private extension BraveScrollController {
         if (snackBars?.frame.size.height ?? 0) > 0 {
             return
         }
+        
+        guard let containerView = scrollView?.superview else { return }
 
         let updatedOffset = toolbarsShowing ? clamp(verticalTranslation - delta, min: -BraveURLBarView.CurrentHeight, max: 0) :
             clamp(verticalTranslation - delta, min: 0, max: BraveURLBarView.CurrentHeight)
 
         verticalTranslation = updatedOffset
-
+        
         if (fabs(updatedOffset) > 0 && fabs(updatedOffset) < BraveURLBarView.CurrentHeight) {
             // this stops parallax effect where the scrolling rate is doubled while hiding/showing toolbars
             scrollView?.contentOffset = CGPoint(x: contentOffset.x, y: contentOffset.y - delta)
@@ -345,24 +357,27 @@ private extension BraveScrollController {
             animation.duration = 0.028
             footer.layer.pop_add(animation, forKey: "footerTranslation")
         }
-
-        let webViewVertTranslation = toolbarsShowing ? verticalTranslation : verticalTranslation - BraveURLBarView.CurrentHeight
         
-        if let webView = getApp().browserViewController.webViewContainer, let animation = POPBasicAnimation(propertyNamed: kPOPLayerTranslationY) {
-            webView.layer.pop_removeAnimation(forKey: "webViewTranslation")
+        if let webView = getApp().browserViewController.webViewContainer, let animation = POPBasicAnimation(propertyNamed: kPOPViewFrame), let header = header {
+            
+            var height = UIScreen.main.bounds.height - header.frame.maxY
+            if let footer = footer {
+                height = min(footer.frame.minY - header.frame.maxY, UIScreen.main.bounds.height)
+            }
+            
+            webView.pop_removeAnimation(forKey: "webViewFrame")
             animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-            animation.toValue = webViewVertTranslation
+            animation.toValue = CGRect(x: 0, y: header.frame.maxY, width: UIScreen.main.bounds.width, height: height)
             animation.duration = 0.028
-            webView.layer.pop_add(animation, forKey: "webViewTranslation")
+            webView.pop_add(animation, forKey: "webViewFrame")
+            webView.setNeedsUpdateConstraints()
         }
-
+        
         var alpha = 1 - abs(verticalTranslation / UIConstants.ToolbarHeight)
         if (!toolbarsShowing) {
             alpha = 1 - alpha
         }
         urlBar?.updateAlphaForSubviews(alpha)
-        
-       // checkHeightOfPageAndAdjustWebViewInsets()
     }
 
     func clamp(_ y: CGFloat, min: CGFloat, max: CGFloat) -> CGFloat {
@@ -385,14 +400,10 @@ private extension BraveScrollController {
             self.header?.layoutIfNeeded()
             self.footer?.layoutIfNeeded()
 
-            // TODO this code is only being used to show toolbars, so right now hard-code for that case, obviously if/when hide is added, update the code to support that
-            let webView = getApp().browserViewController.webViewContainer
-            webView?.layer.transform = CATransform3DIdentity
-
             if isShowingDueToBottomTap { // scroll up to show page under the bottom toolbar
                 self.scrollView?.contentOffset.y += 2 * BraveURLBarView.CurrentHeight
             } else if self.contentOffset.y > BraveURLBarView.CurrentHeight {
-                // keep the web view in the same scroll position by scrolling up the toolbar height 
+                // keep the web view in the same scroll position by scrolling up the toolbar height
                 self.scrollView?.contentOffset.y += BraveURLBarView.CurrentHeight
             }
         }

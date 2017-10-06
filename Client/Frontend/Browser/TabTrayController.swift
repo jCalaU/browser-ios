@@ -112,7 +112,7 @@ class TabCell: UICollectionViewCell {
         
         self.placeholderFavicon.layer.cornerRadius = 8.0
         self.placeholderFavicon.layer.masksToBounds = true
-        contentView.addSubview(self.placeholderFavicon)
+        backgroundHolder.addSubview(self.placeholderFavicon)
         
         setupConstraints()
 
