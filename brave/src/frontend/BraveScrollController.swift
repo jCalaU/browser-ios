@@ -358,19 +358,27 @@ private extension BraveScrollController {
             footer.layer.pop_add(animation, forKey: "footerTranslation")
         }
         
-        if let webView = getApp().browserViewController.webViewContainer, let animation = POPBasicAnimation(propertyNamed: kPOPViewFrame), let header = header {
+        if let scrollView = self.scrollView, let header = header {
             
-            var height = UIScreen.main.bounds.height - header.frame.maxY
-            if let footer = footer {
-                height = min(footer.frame.minY - header.frame.maxY, UIScreen.main.bounds.height)
+            if let animation = POPBasicAnimation(propertyNamed: kPOPScrollViewContentInset) {
+                let bottom = footer?.frame ?? CGRect.zero
+                scrollView.pop_removeAnimation(forKey: "contentInsets")
+                animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+                animation.toValue = UIEdgeInsetsMake(header.frame.maxY, 0, min(UIScreen.main.bounds.height - bottom.minY, 0), 0)
+                animation.duration = 0.028
+                scrollView.pop_add(animation, forKey: "contentInsets")
+                scrollView.setNeedsUpdateConstraints()
             }
             
-            webView.pop_removeAnimation(forKey: "webViewFrame")
-            animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-            animation.toValue = CGRect(x: 0, y: header.frame.maxY, width: UIScreen.main.bounds.width, height: height)
-            animation.duration = 0.028
-            webView.pop_add(animation, forKey: "webViewFrame")
-            webView.setNeedsUpdateConstraints()
+            if let animation = POPBasicAnimation(propertyNamed: kPOPScrollViewScrollIndicatorInsets) {
+                let bottom = footer?.frame ?? CGRect.zero
+                scrollView.pop_removeAnimation(forKey: "scrollIndicatorInsets")
+                animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+                animation.toValue = UIEdgeInsetsMake(header.frame.maxY, 0, min(UIScreen.main.bounds.height - bottom.minY, 0), 0)
+                animation.duration = 0.028
+                scrollView.pop_add(animation, forKey: "scrollIndicatorInsets")
+                scrollView.setNeedsUpdateConstraints()
+            }
         }
         
         var alpha = 1 - abs(verticalTranslation / UIConstants.ToolbarHeight)
