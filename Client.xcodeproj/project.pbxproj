@@ -88,6 +88,7 @@
 		3078EC63F4D0D10D8CE0B5E5 /* version_set.cc in Sources */ = {isa = PBXBuildFile; fileRef = 5A96238B8C31C177C5873A11 /* version_set.cc */; };
 		309EA23114E638AD05EBCD27 /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3DBBA58E534C89EA119ABA /* UIConstants.swift */; };
 		31CAC008CE6B2D73DBFC9A5E /* ElementAtPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6EEFFEC93440CA70F7A67 /* ElementAtPoint.swift */; };
+		31DE27A81F8BFDD00073FBD6 /* ImagePeekPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DE27A71F8BFDCF0073FBD6 /* ImagePeekPreviewViewController.swift */; };
 		3275A11BBBE5E736BD12729A /* GenericTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EABAA73084D115EF97BD2E /* GenericTable.swift */; };
 		32AFA6803EED54948FC69908 /* MenuHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A09CA3AB626543290E03B /* MenuHelper.swift */; };
 		32D87E603A2558A49B505DB0 /* iterator.h in Headers */ = {isa = PBXBuildFile; fileRef = E16365326F2615790F72965F /* iterator.h */; };
@@ -969,6 +970,7 @@
 		2FCAE2241ABB51F800877008 /* StorageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StorageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3068E336E4706F9A280980E0 /* Main.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ./ThirdParty/UIImageViewAligned/Example/ImageAlignment/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		30AE5F9165CE40F4F87CC86A /* ToggleButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToggleButton.swift; path = ./Client/Frontend/Widgets/ToggleButton.swift; sourceTree = "<group>"; };
+		31DE27A71F8BFDCF0073FBD6 /* ImagePeekPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagePeekPreviewViewController.swift; path = Client/Frontend/Browser/ImagePeekPreviewViewController.swift; sourceTree = "<group>"; };
 		32454E9E39178D4B3CD31294 /* FirstPartyHost.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FirstPartyHost.h; sourceTree = "<group>"; };
 		328648B91B53FB403160DF08 /* block_.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = block_.h; path = ./brave/ThirdParty/leveldb/table/block_.h; sourceTree = "<group>"; };
 		32DE82BEFE4A1706E4211F41 /* HttpsEverywhere.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HttpsEverywhere.swift; path = ./brave/src/webfilters/HttpsEverywhere.swift; sourceTree = "<group>"; };
@@ -1823,6 +1825,7 @@
 				85E73012CDCAD318AC829281 /* URIFixup.swift */,
 				0C1EC8C1DDF251BC04F959BC /* URLBarView.swift */,
 				FD0312A6613A6023990734CF /* WindowCloseHelper.swift */,
+				31DE27A71F8BFDCF0073FBD6 /* ImagePeekPreviewViewController.swift */,
 			);
 			name = Browser;
 			sourceTree = "<group>";
@@ -3624,6 +3627,7 @@
 					};
 					EB0F42501C9A46D800676650 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 3H43DJFZZ4;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -3637,6 +3641,7 @@
 					};
 					F84B21BD1A090F8100AAB793 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 3H43DJFZZ4;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -4276,6 +4281,7 @@
 				E89DEAF4A642EA060CAC3883 /* dbformat.cc in Sources */,
 				5D2AE6FA1E83F3EC00BC274C /* SyncSite.swift in Sources */,
 				A6A180ED09280A17C5C11B72 /* dumpfile.cc in Sources */,
+				31DE27A81F8BFDD00073FBD6 /* ImagePeekPreviewViewController.swift in Sources */,
 				252BFD86BA8B20F6B485D561 /* filename.cc in Sources */,
 				7823B137D3AA2D991BC8DC5C /* log_reader.cc in Sources */,
 				4AF02687F2E5153D0D0632EF /* log_writer.cc in Sources */,
@@ -4802,7 +4808,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_ENTITLEMENTS = brave/Brave.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3H43DJFZZ4;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -5180,7 +5186,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3H43DJFZZ4;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = BraveShareTo/BraveShareToInfo.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
@@ -5211,7 +5217,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3H43DJFZZ4;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -5397,7 +5403,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_ENTITLEMENTS = brave/Brave.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3H43DJFZZ4;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",

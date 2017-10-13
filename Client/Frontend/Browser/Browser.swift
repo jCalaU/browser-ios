@@ -242,6 +242,7 @@ class Browser: NSObject, BrowserWebViewDelegate {
     // Broke these into separate methods to increase data, can merge back to main method at some point
     fileprivate func createNewWebview(_ useDesktopUserAgent:Bool) -> BraveWebView {
         let webView = BraveWebView(frame: CGRect.zero, useDesktopUserAgent: useDesktopUserAgent)
+        webView.allowsLinkPreview = true
         configuration = nil
         
         BrowserTabToUAMapper.setId(webView.uniqueId, tab:self)

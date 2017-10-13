@@ -5,10 +5,11 @@ protocol WindowTouchFilter: class {
     func filterTouch(_ touch: UITouch) -> Bool
 }
 
-class BraveMainWindow : UIWindow {
+class BraveMainWindow : UIWindow, UIViewControllerPreviewingDelegate {
 
     let contextMenuHandler = BraveContextMenu()
     let blankTargetLinkHandler = BlankTargetLinkHandler()
+    var caughtEvent:UIEvent?
 
     class Weak_WindowTouchFilter {     // We can't use a WeakList here because this is a protocol.
         weak var value : WindowTouchFilter?
@@ -34,6 +35,7 @@ class BraveMainWindow : UIWindow {
     }
 
     override func sendEvent(_ event: UIEvent) {
+        self.caughtEvent = event
         contextMenuHandler.sendEvent(event, window: self)
         blankTargetLinkHandler.sendEvent(event, window: self)
 
@@ -50,5 +52,24 @@ class BraveMainWindow : UIWindow {
             }
         }
         super.sendEvent(event)
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        self.touchesCancelled(self.caughtEvent!.allTouches!, with: self.caughtEvent!)
+        
+        let hit: (url: String?, image: String?, urlTarget: String?)?
+        hit = ElementAtPoint().getHit(location)
+        
+        if let imageURLString = hit?.image {
+            let peekVC = ImagePeekPreviewViewController.init(imageURLString: imageURLString)
+                peekVC.parentVC = getApp().rootViewController.visibleViewController
+                return peekVC
+        }
+        
+        return nil
     }
 }

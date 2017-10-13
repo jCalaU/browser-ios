@@ -449,6 +449,15 @@ class BrowserViewController: UIViewController {
         }
     }
 
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        //Register the Brave window as the listener so we can cancel other touches if 3D touch is found
+        if self.traitCollection.forceTouchCapability == .available {
+            self.registerForPreviewing(with: getApp().window!, sourceView: self.webViewContainer)
+        }
+    }
+    
     override func viewDidLayoutSubviews() {
         log.debug("BVC viewDidLayoutSubviews…")
         super.viewDidLayoutSubviews()

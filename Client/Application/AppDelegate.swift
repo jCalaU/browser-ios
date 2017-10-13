@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIViewControllerRestorati
     
     // TODO: Having all of these global opens up lots of abuse potential (open via getApp())
     
-    var window: UIWindow?
+    var window: BraveMainWindow?
     var securityWindow: UIWindow?
     var securityViewController: PinProtectOverlayViewController?
     var browserViewController: BrowserViewController!
