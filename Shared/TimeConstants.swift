@@ -86,6 +86,10 @@ extension Date {
 
         return String(format: NSLocalizedString("just now", comment: "Relative time for a tab that was visited within the last few moments."))
     }
+    
+    public func toTimestamp() -> Timestamp {
+        return UInt64(self.timeIntervalSince1970 * 1000)
+    }
 }
 
 let MaxTimestampAsDouble: Double = Double(UInt64.max)

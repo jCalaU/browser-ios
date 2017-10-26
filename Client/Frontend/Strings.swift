@@ -453,6 +453,14 @@ extension Strings {
     public static let SettingsDoNotTrackOptionAlwaysOn = NSLocalizedString("Settings.DNT.OptionAlwaysOn", value: "Always", comment: "DNT Settings option for always on")
 }
 
+// History
+extension Strings {
+    public static let Today = NSLocalizedString("Today", comment: "History tableview section header")
+    public static let Yesterday = NSLocalizedString("Yesterday", comment: "History tableview section header")
+    public static let LastWeek = NSLocalizedString("Last week", comment: "History tableview section header")
+    public static let LastMonth = NSLocalizedString("Last month", comment: "History tableview section header")
+}
+
 // MARK: Deprecated Strings (to be removed in next version)
 private let logOut = NSLocalizedString("Log Out", comment: "Button in settings screen to disconnect from your account")
 private let logOutQuestion = NSLocalizedString("Log Out?", comment: "Title of the 'log out firefox account' alert")

@@ -295,6 +295,17 @@
 		59A68D66379CFA85C4EAF00B /* TwoLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A68B1F857A8638598A63A0 /* TwoLineCell.swift */; };
 		59A68E0B4ABBF55E14819668 /* BookmarksPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A6839879D615FC1C0D71CE /* BookmarksPanel.swift */; };
 		59A68FD5260B8D520F890F4A /* ReaderPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A685F4EAD19EDEC854BCA4 /* ReaderPanel.swift */; };
+		5CAE14371FA2361D0048D506 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAE14271FA2361A0048D506 /* History.swift */; };
+		5CAE14381FA2361D0048D506 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5CAE14281FA2361A0048D506 /* Model.xcdatamodeld */; };
+		5CAE14391FA2361D0048D506 /* WebsitePresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAE142E1FA2361A0048D506 /* WebsitePresentable.swift */; };
+		5CAE143A1FA2361D0048D506 /* TabMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAE142F1FA2361B0048D506 /* TabMO.swift */; };
+		5CAE143B1FA2361D0048D506 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAE14301FA2361B0048D506 /* Device.swift */; };
+		5CAE143C1FA2361D0048D506 /* Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAE14311FA2361B0048D506 /* Domain.swift */; };
+		5CAE143D1FA2361D0048D506 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAE14321FA2361C0048D506 /* DataController.swift */; };
+		5CAE143E1FA2361D0048D506 /* TopSite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAE14331FA2361C0048D506 /* TopSite.swift */; };
+		5CAE143F1FA2361D0048D506 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAE14341FA2361C0048D506 /* Bookmark.swift */; };
+		5CAE14401FA2361D0048D506 /* FaviconMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAE14351FA2361D0048D506 /* FaviconMO.swift */; };
+		5CAE14541FA23A950048D506 /* BraveUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAE14531FA23A950048D506 /* BraveUtil.swift */; };
 		742A56391D80B54A00BDB803 /* PhotonActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742A56381D80B54A00BDB803 /* PhotonActionSheet.swift */; };
 		744B0FFE1B4F172E00100422 /* ToolbarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744B0FFD1B4F172E00100422 /* ToolbarTests.swift */; };
 		744ED5611DBFEB8D00A2B5BE /* MailtoLinkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744ED5601DBFEB8D00A2B5BE /* MailtoLinkHandler.swift */; };
@@ -1550,6 +1561,21 @@
 		59A685F4EAD19EDEC854BCA4 /* ReaderPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderPanel.swift; sourceTree = "<group>"; };
 		59A68B1F857A8638598A63A0 /* TwoLineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoLineCell.swift; sourceTree = "<group>"; };
 		59A68CCB63E2A565CB03F832 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		5CAE14271FA2361A0048D506 /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = History.swift; path = Data/History.swift; sourceTree = "<group>"; };
+		5CAE14291FA2361A0048D506 /* Model2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model2.xcdatamodel; sourceTree = "<group>"; };
+		5CAE142A1FA2361A0048D506 /* Model4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model4.xcdatamodel; sourceTree = "<group>"; };
+		5CAE142B1FA2361A0048D506 /* Model3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model3.xcdatamodel; sourceTree = "<group>"; };
+		5CAE142C1FA2361A0048D506 /* Model5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model5.xcdatamodel; sourceTree = "<group>"; };
+		5CAE142D1FA2361A0048D506 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		5CAE142E1FA2361A0048D506 /* WebsitePresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebsitePresentable.swift; path = Data/WebsitePresentable.swift; sourceTree = "<group>"; };
+		5CAE142F1FA2361B0048D506 /* TabMO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabMO.swift; path = Data/TabMO.swift; sourceTree = "<group>"; };
+		5CAE14301FA2361B0048D506 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Device.swift; path = Data/Device.swift; sourceTree = "<group>"; };
+		5CAE14311FA2361B0048D506 /* Domain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Domain.swift; path = Data/Domain.swift; sourceTree = "<group>"; };
+		5CAE14321FA2361C0048D506 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataController.swift; path = Data/DataController.swift; sourceTree = "<group>"; };
+		5CAE14331FA2361C0048D506 /* TopSite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TopSite.swift; path = Data/TopSite.swift; sourceTree = "<group>"; };
+		5CAE14341FA2361C0048D506 /* Bookmark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bookmark.swift; path = Data/Bookmark.swift; sourceTree = "<group>"; };
+		5CAE14351FA2361D0048D506 /* FaviconMO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FaviconMO.swift; path = Data/FaviconMO.swift; sourceTree = "<group>"; };
+		5CAE14531FA23A950048D506 /* BraveUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BraveUtil.swift; sourceTree = "<group>"; };
 		742A56381D80B54A00BDB803 /* PhotonActionSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotonActionSheet.swift; sourceTree = "<group>"; };
 		744B0FFD1B4F172E00100422 /* ToolbarTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolbarTests.swift; sourceTree = "<group>"; };
 		744ED5601DBFEB8D00A2B5BE /* MailtoLinkHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailtoLinkHandler.swift; sourceTree = "<group>"; };
@@ -2781,6 +2807,23 @@
 			path = XCUITests;
 			sourceTree = "<group>";
 		};
+		5CAE14251FA235FD0048D506 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				5CAE14341FA2361C0048D506 /* Bookmark.swift */,
+				5CAE14321FA2361C0048D506 /* DataController.swift */,
+				5CAE14301FA2361B0048D506 /* Device.swift */,
+				5CAE14311FA2361B0048D506 /* Domain.swift */,
+				5CAE14351FA2361D0048D506 /* FaviconMO.swift */,
+				5CAE14271FA2361A0048D506 /* History.swift */,
+				5CAE14281FA2361A0048D506 /* Model.xcdatamodeld */,
+				5CAE142F1FA2361B0048D506 /* TabMO.swift */,
+				5CAE14331FA2361C0048D506 /* TopSite.swift */,
+				5CAE142E1FA2361A0048D506 /* WebsitePresentable.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
 		7B0B1B9C1C1B69F500DF4AB5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -3231,6 +3274,7 @@
 		E65075551E37F714006961AC /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				5CAE14531FA23A950048D506 /* BraveUtil.swift */,
 				E650755A1E37F747006961AC /* Swizzling.h */,
 				E650755B1E37F747006961AC /* Swizzling.m */,
 				E65075561E37F714006961AC /* FaviconFetcher.swift */,
@@ -3513,6 +3557,7 @@
 				F84B21EB1A0910F600AAB793 /* Assets */,
 				F84B21E41A0910F600AAB793 /* Application */,
 				E60961841B62B7E100DD640F /* Configuration */,
+				5CAE14251FA235FD0048D506 /* Data */,
 				E689C6FF1E0C716F008BAADB /* Entitlements */,
 				28EADE5C1AFC3A6D007FB2FB /* Extensions */,
 				F84B21F11A0910F600AAB793 /* Frontend */,
@@ -4336,7 +4381,7 @@
 					};
 					3B43E3CF1D95C48D00BBA9DB = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 43AQ936H96;
+						DevelopmentTeam = 9G8J6YA743;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						TestTargetID = F84B21BD1A090F8100AAB793;
@@ -4357,7 +4402,7 @@
 					};
 					D39FA15E1A83E0EC00EE869C = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = 43AQ936H96;
+						DevelopmentTeam = 9G8J6YA743;
 						LastSwiftMigration = 0820;
 						TestTargetID = F84B21BD1A090F8100AAB793;
 					};
@@ -4379,7 +4424,7 @@
 					};
 					E4D567211ADECE2700F1EFE7 = {
 						CreatedOnToolsVersion = 6.3;
-						DevelopmentTeam = 43AQ936H96;
+						DevelopmentTeam = 9G8J6YA743;
 						LastSwiftMigration = 0820;
 						TestTargetID = F84B21BD1A090F8100AAB793;
 					};
@@ -5462,6 +5507,7 @@
 				3BCE6D3C1CEB9E4D0080928C /* ThirdPartySearchAlerts.swift in Sources */,
 				745DAB301CDAAFAA00D44181 /* RecentlyClosedTabsPanel.swift in Sources */,
 				C45F44691D087DB600CB7EF0 /* TopTabsViewController.swift in Sources */,
+				5CAE14381FA2361D0048D506 /* Model.xcdatamodeld in Sources */,
 				0BF0DB941A8545800039F300 /* URLBarView.swift in Sources */,
 				E65607611C08B4E200534B02 /* SearchInputView.swift in Sources */,
 				EB2A63341F3B49A7004EF8B0 /* ContentBlockerHelper.swift in Sources */,
@@ -5471,6 +5517,7 @@
 				D331DFCA1CB6E9EE009B5DA2 /* OldStrings.swift in Sources */,
 				D3BE7B461B054F8600641031 /* TestAppDelegate.swift in Sources */,
 				3BB50E111D6274CD004B33DF /* ActivityStreamTopSitesCell.swift in Sources */,
+				5CAE143E1FA2361D0048D506 /* TopSite.swift in Sources */,
 				0B62EFD21AD63CD100ACB9CD /* Clearables.swift in Sources */,
 				7482205C1DBAB56300EEEA72 /* MailProviders.swift in Sources */,
 				C40046FA1CF8E0B200B08303 /* BackForwardListAnimator.swift in Sources */,
@@ -5524,10 +5571,12 @@
 				D34510881ACF415700EC27F0 /* SearchLoader.swift in Sources */,
 				E65075521E37F6D1006961AC /* UIViewExtensions.swift in Sources */,
 				C8F457A81F1FD75A000CB895 /* BrowserViewController+WKNavigationDelegate.swift in Sources */,
+				5CAE143F1FA2361D0048D506 /* Bookmark.swift in Sources */,
 				E6927EC01C7B6FB800D03F75 /* ErrorToast.swift in Sources */,
 				D30B101E1AA7F9C600C01CA3 /* HomePanels.swift in Sources */,
 				F84B22041A0910F600AAB793 /* AppDelegate.swift in Sources */,
 				E653422D1C5944F90039DD9E /* BrowserPrompts.swift in Sources */,
+				5CAE14401FA2361D0048D506 /* FaviconMO.swift in Sources */,
 				2FDE87FE1ABB3817005317B1 /* RemoteTabsPanel.swift in Sources */,
 				39DD030D1CD53E1900BC09B3 /* HomePageHelper.swift in Sources */,
 				C4F3B29A1CFCF93A00966259 /* ButtonToast.swift in Sources */,
@@ -5553,6 +5602,7 @@
 				D02816C21ECA5E2A00240CAA /* HistoryStateHelper.swift in Sources */,
 				E68E7ACB1CAC1D4500FDCA76 /* PagingPasscodeViewController.swift in Sources */,
 				D34DC8531A16C40C00D49B7B /* Profile.swift in Sources */,
+				5CAE143B1FA2361D0048D506 /* Device.swift in Sources */,
 				392ED6B71D06E85E009D9B62 /* NewTabChoiceViewController.swift in Sources */,
 				E4B3348C1BC01D8F004E2BFF /* AdjustIntegration.swift in Sources */,
 				E65075541E37F6FC006961AC /* DynamicFontHelper.swift in Sources */,
@@ -5560,6 +5610,7 @@
 				D3FEC38D1AC4B42F00494F45 /* AutocompleteTextField.swift in Sources */,
 				E4ECD0881B70FD4F00B90D22 /* WindowCloseHelper.swift in Sources */,
 				0BD19A671A25309B0084FBA7 /* NSUserDefaultsPrefs.swift in Sources */,
+				5CAE143C1FA2361D0048D506 /* Domain.swift in Sources */,
 				E68AEDB01B18F81A00133D99 /* SwipeAnimator.swift in Sources */,
 				3BF56D271CDBBE1F00AC4D75 /* SimpleToast.swift in Sources */,
 				D31F95E91AC226CB005C9F3B /* ScreenshotHelper.swift in Sources */,
@@ -5572,6 +5623,7 @@
 				392ED7E41D0AEF56009D9B62 /* NewTabAccessors.swift in Sources */,
 				D3A9949D1A3686BD008AD1AC /* Tab.swift in Sources */,
 				A93067E81D0FE18E00C49C6E /* NightModeHelper.swift in Sources */,
+				5CAE14541FA23A950048D506 /* BraveUtil.swift in Sources */,
 				3B39EDCB1E16E1AA00EF029F /* CustomSearchViewController.swift in Sources */,
 				E65075571E37F714006961AC /* FaviconFetcher.swift in Sources */,
 				D863C8F21F68BFC20058D95F /* GradientProgressBar.swift in Sources */,
@@ -5579,6 +5631,7 @@
 				7BC68D091CC153020043562A /* RoundedToolbar.swift in Sources */,
 				39AC591A1CC574AB0042C2F5 /* HomePageSettingsViewController.swift in Sources */,
 				E4A961181AC041C40069AD6F /* ReadabilityService.swift in Sources */,
+				5CAE14371FA2361D0048D506 /* History.swift in Sources */,
 				D3BE7B261B054D4400641031 /* main.swift in Sources */,
 				0BA1E02E1B046F1E007675AF /* ErrorPageHelper.swift in Sources */,
 				D3A9949C1A3686BD008AD1AC /* BrowserViewController.swift in Sources */,
@@ -5589,6 +5642,7 @@
 				E640E85E1C73A45A00C5F072 /* PasscodeEntryViewController.swift in Sources */,
 				8D8251811F4DE67F00780643 /* AdvanceAccountSettingViewController.swift in Sources */,
 				E633E2DA1C21EAF8001FFF6C /* LoginDetailViewController.swift in Sources */,
+				5CAE143A1FA2361D0048D506 /* TabMO.swift in Sources */,
 				59A68B280D62462B85CF57A4 /* HistoryPanel.swift in Sources */,
 				19DE1F671EC13B6400428B8C /* LeanplumIntegration.swift in Sources */,
 				E65D89181C8647420006EA35 /* AppAuthenticator.swift in Sources */,
@@ -5602,6 +5656,7 @@
 				7B844E3D1BBDDB9D00E733A2 /* ChevronView.swift in Sources */,
 				E4C358551AF144BA00299F7E /* FSReadingList.m in Sources */,
 				3BE7275D1CCFE8B60099189F /* CustomSearchHandler.swift in Sources */,
+				5CAE14391FA2361D0048D506 /* WebsitePresentable.swift in Sources */,
 				E692E3291C46E62D009D1240 /* AuthenticationSettingsViewController.swift in Sources */,
 				E663D5781BB341C4001EF30E /* ToggleButton.swift in Sources */,
 				C88601C61F4228AD00BBDE4F /* ContentBlockerSettingViewController.swift in Sources */,
@@ -5612,6 +5667,7 @@
 				59A68FD5260B8D520F890F4A /* ReaderPanel.swift in Sources */,
 				E40FAB0C1A7ABB77009CB80D /* WebServer.swift in Sources */,
 				59A68D66379CFA85C4EAF00B /* TwoLineCell.swift in Sources */,
+				5CAE143D1FA2361D0048D506 /* DataController.swift in Sources */,
 				E49943F51AE6879C00BF9DE4 /* IntroViewController.swift in Sources */,
 				3B4262E61E538EC400CA681C /* MetadataParserHelper.swift in Sources */,
 			);
@@ -9257,6 +9313,24 @@
 			defaultConfigurationName = Fennec;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5CAE14281FA2361A0048D506 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5CAE14291FA2361A0048D506 /* Model2.xcdatamodel */,
+				5CAE142A1FA2361A0048D506 /* Model4.xcdatamodel */,
+				5CAE142B1FA2361A0048D506 /* Model3.xcdatamodel */,
+				5CAE142C1FA2361A0048D506 /* Model5.xcdatamodel */,
+				5CAE142D1FA2361A0048D506 /* Model.xcdatamodel */,
+			);
+			currentVersion = 5CAE14291FA2361A0048D506 /* Model2.xcdatamodel */;
+			name = Model.xcdatamodeld;
+			path = Data/Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F84B21B61A090F8100AAB793 /* Project object */;
 }
