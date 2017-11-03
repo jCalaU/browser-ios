@@ -26,7 +26,7 @@ function trapInstanceMethod (item) {
 }
 
 var methods = []
-var canvasMethods = ['getImageData', 'getLineDash', 'measureText']
+var canvasMethods = ['getImageData', 'getLineDash', 'measureText', 'isPointInPath']
 canvasMethods.forEach(function (method) {
     var item = {
     type: 'Canvas',
@@ -50,7 +50,8 @@ canvasElementMethods.forEach(function (method) {
 })
 
 var webglMethods = ['getSupportedExtensions', 'getParameter', 'getContextAttributes',
-    'getShaderPrecisionFormat', 'getExtension']
+    'getShaderPrecisionFormat', 'getExtension', 'readPixels', 'getUniformLocation',
+    'getAttribLocation']
 webglMethods.forEach(function (method) {
     var item = {
     type: 'WebGL',
@@ -82,6 +83,39 @@ analyserMethods.forEach(function (method) {
     obj: window.AnalyserNode.prototype
     }
     methods.push(item)
+})
+
+var svgPathMethods = ['getTotalLength']
+svgPathMethods.forEach(function (method) {
+    var item = {
+    type: 'SVG',
+    objName: 'SVGPathElement.prototype',
+    propName: method,
+    obj: window.SVGPathElement.prototype
+    }
+    methods.push(item)
+})
+
+var svgTextContentMethods = ['getComputedTextLength']
+svgTextContentMethods.forEach(function (method) {
+   var item = {
+   type: 'SVG',
+   objName: 'SVGTextContentElement.prototype',
+   propName: method,
+   obj: window.SVGTextContentElement.prototype
+   }
+   methods.push(item)
+})
+
+var webrtcMethods = ['createOffer', 'createAnswer', 'setLocalDescription', 'setRemoteDescription']
+webrtcMethods.forEach(function (method) {
+   var item = {
+   type: 'WebRTC',
+   objName: 'webkitRTCPeerConnection.prototype',
+   propName: method,
+   obj: window.webkitRTCPeerConnection.prototype
+   }
+   methods.push(item)
 })
 
 methods.forEach(trapInstanceMethod)
